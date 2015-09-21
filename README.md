@@ -15,7 +15,15 @@ addSbtPlugin("com.eed3si9n" % "sbt-ynolub" % "0.1.0")
 ### what this does
 
 This plugin will switch your Scala to a hacked version of 2.11 that implements `-Yno-lub` flag.
-It's an experimenal flag to turn of lubbing duing the type inference.
+It's an experimenal flag to turn off lubbing duing the type inference.
+
+Given type `A` and type `B`, the lub is the least upper bound with regards to `<:<`.
+The process of unifying multiple types during type inference is sometimes called "lubbing".
+See for example:
+
+- [SI-2251: wrong lub of types involving f-bounded polymorphism](https://issues.scala-lang.org/browse/SI-2251), 2009 Paul Phillips
+- [widening, pseudo-widening, inferring, weak lubbing, and kickball captains](https://groups.google.com/d/msg/scala-internals/PihG-EWX2es/FnjSImNC8UcJ), 2013 Paul Phillips
+- [Demystifying Type Inference](http://rapture.io/talks/inference/boston.html), 2015 Jon Pretty
 
 Plain Scala:
 
